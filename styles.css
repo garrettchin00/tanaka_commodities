@@ -3,59 +3,198 @@
 /* IMPORTED FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-/* CSS RESET */
+/* ---------- CSS Variables ---------- */
+:root{
+    /* Theme Colors */
+    --red: #fd0118;
+    --white: #fff;
+    --black: #020202;
+    --gray: #939393;
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+    /* Other Colors */
+    --lt-gray: #f2f2f2;
+    --purple: #6b1869;
+    --magenta: #eb1cf0;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    /* ----- FONTS ----- */
+    --font-family: 'Cabin', 'Open Sans', sans-serif;
+
+    /* Background */
+    background-color: #eb1cf0;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20L0 20z' fill='%236b1869' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section{
-	display: block;
+/* ---------- Link Styles ---------- */
+a{
+    display: block;
+    text-align: center;
 }
 
+img{
+    width: 240px;
+    height: 135px;
+    position: absolute;
+    left: 0;
+}
+/* ---------- Body Styles ---------- */
 body{
-	line-height: 1;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    font-family: var(--fonts);
+    margin: 0;
 }
 
-ol, ul{
-	list-style: none;
+/* Text Styles */
+p{
+    display: grid;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
-blockquote, q{
-	quotes: none;
+/* ---------- Header Styles ---------- */
+header{
+    padding: 1rem;
+    width: 968px;
+    margin: 0 auto;
+    background-color: var(--black);
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after{
-	content: '';
-	content: none;
+/* ----- HEADING STYLES ----- */
+h1{
+    font-size: 3rem;
+    text-align: center;
+    color: var(--white);
+    font-family: 'Cabin', sans-serif;
 }
 
-table{
-	border-collapse: collapse;
-	border-spacing: 0;
+h2{
+    font-size: 2.2rem;
+    text-align: left;
+    font-family: 'Cabin', sans-serif;
+}
+
+/* ---------- Nav Ul Styles --------- */
+nav{
+    color: var(--white);
+    font-family: 'Cabin', sans-serif;
+}
+
+nav ul{
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+    float: none;
+    justify-content: center;
+}
+
+/* ---------- Nav a Styles --------- */
+nav a{
+    text-decoration: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* ---------- Navigation a Hover Styles ---------- */
+nav a:hover{
+    border-color: var(--red);
+    color: var(--red);
+}
+
+/* ---------- Main Styles ---------- */
+main{
+    width: 1000px;
+    padding: 2rem 0;
+    margin-top: 0;
+    margin-left: auto;
+    margin-bottom: 8px;
+    margin-right: auto;
+    background-color: var(--red);
+}
+
+/* ---------- Main Section Styles ---------- */
+main > section{
+    padding-top: 2rem;
+    padding-bottom: 9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* ---------- Main H2 Styles ---------- */
+main h2{
+    font-size: 1rem;
+    padding: 0;
+    width: fit-content;
+    margin: 0;
+    background-color: var(--red);
+    color: var(--black);
+}
+
+iframe{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    float: right;
+    top: -150px;
+    overflow: clip !important;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+/* ---------- Footer Styles ---------- */
+footer{
+    padding: 1rem;
+    width: 968px;
+    margin: 0 auto;
+    background-color: var(--white);
+    text-align: center;
+    padding-top: 2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer h2{
+    margin: 0 auto;
+    font-size: 1.35rem;
+    line-height: 1;
+    grid-column: 1/-1;
+}
+
+footer section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem 1rem;
+    width: 520px;
+    text-align: center;
+    margin: 0 auto 1rem auto;
+}
+
+footer a{
+    padding: 0.5rem;
+    color: var(--dk-gray);
+    text-underline-offset: 4px;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 2px;
+}
+
+footer a:hover{
+    color: var(--red);
+}
+
+footer p{
+    margin: 0 auto;
+    font-size: 1rem;
 }
