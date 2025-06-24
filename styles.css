@@ -6,7 +6,7 @@
 /* ---------- CSS Variables ---------- */
 :root{
     /* Theme Colors */
-    --red: #fd0118;
+    --red: #c72615;
     --white: #fff;
     --black: #020202;
     --gray: #939393;
@@ -31,8 +31,8 @@ a{
 }
 
 img{
-    width: 240px;
-    height: 135px;
+    width: 180px;
+    height: 172px;
     position: absolute;
     left: 0;
 }
@@ -54,6 +54,7 @@ p{
     unicode-bidi: isolate;
     font-size: 1rem;
     font-family: 'Open Sans', sans-serif;
+    color: var(--white);
 }
 
 /* ---------- Header Styles ---------- */
@@ -75,10 +76,11 @@ h1{
     font-family: 'Cabin', sans-serif;
 }
 
-h2{
-    font-size: 2.2rem;
+#about h2{
+    font-size: 1.5rem;
     text-align: left;
     font-family: 'Cabin', sans-serif;
+    color: var(--white);
 }
 
 /* ---------- Nav Ul Styles --------- */
