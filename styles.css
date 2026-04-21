@@ -10,6 +10,7 @@
     --white: #fff;
     --black: #020202;
     --gray: #939393;
+    --dk-gray: #222;
 
     /* Other Colors */
     --lt-gray: #f2f2f2;
@@ -141,7 +142,7 @@ main h2{
     width: fit-content;
     margin: 0;
     background-color: var(--red);
-    color: var(--black);
+    color: var(--dk-gray);
 }
 
 iframe{
@@ -199,4 +200,158 @@ footer a:hover{
 footer p{
     margin: 0 auto;
     font-size: 1rem;
+}
+
+form{
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}
+
+label{
+  display: block;
+  margin: 1rem 0 0 1rem;
+}
+
+.required{
+  display: inline-block;
+  color: var(--magenta);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.guide{
+  display: block;
+  font-size: 1rem;
+  color: var(--lt-gray);
+}
+
+input[type="text"], input[type="email"]{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--black);
+  line-height: 1;
+  height: 2.5rem;
+}
+
+input:focus{
+  box-shadow: var(--gray);
+  border: 2px solid var(--purple);
+}
+
+.hidden{
+  visibility: hidden;
+  height: 1.5rem;
+  margin: 0.5rem 0 0 0;
+}
+
+fieldset{
+  width: 100%;
+  border-color: var(--purple);
+  margin: 1rem auto 0.5rem auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+legend{
+  font-size: 1.1rem;
+  margin-left: 1rem;
+}
+
+/* custom radio styles from: https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+label.radio{
+  font-size: 1rem;
+  color: var(--dk-gray);
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0 1rem 0;
+  margin: 0 0 0 2rem;
+}
+
+input[type="radio"]{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio_input{
+  display: flex;
+}
+
+span.radio_control{
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 0.1rem solid var(--purple);
+  transform: translateY(-0.05rem);
+  color: var(--gray);
+}
+
+span.radio_label{
+  line-height: 1;
+  height: auto;
+  color: var(--dk-gray);
+}
+
+.radio_input input:checked + .radio_control{
+  background: radial-gradient(var(--teal) 50%, rgba(255, 0, 0, 0) 51%);
+}
+
+.radio_input input:focus + .radio_control{
+  box-shadow: 0 0 0 0.05rem var(--white), 0 0 0.15rem 0.1rem var(--teal);
+}
+
+/* custom checkbox styles from: https://moderncss.dev/pure-css-custom-checkbox-style/ */
+.checkbox{
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5rem;
+  align-items: end;
+  font-size: 1rem;
+  color: var(--gray);
+  margin: -2rem 0 0 0;
+  line-height: 1;
+}
+
+.checkbox_input input{
+  opacity: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+.checkbox_control{
+  display: inline-grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 1.1rem;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--gray);
+}
+
+.checkbox_control svg{
+  transition: transform 0.1s ease-in 25ms;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+
+.checkbox_input input:checked + .checkbox_control svg{
+  transform: scale(1);
+}
+
+.checkbox_input input:focus + .checkbox_control{
+  box-shadow: 0 0 0 0.05rem var(--white), 0 0 0.15rem 0.1rem #939393;
+}
+
+input[type="text"].error, input[type="email"].error, #agree.error + span.checkbox_control{
+  border: 2px solid var(--magenta);
 }
