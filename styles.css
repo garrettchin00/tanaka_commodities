@@ -107,6 +107,17 @@ nav ul{
     justify-content: center;
 }
 
+/* ------- Ul Styles -------- */
+ul{
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+    float: none;
+    justify-content: center;
+}
+
 /* ---------- Nav a Styles --------- */
 nav a{
     text-decoration: none;
