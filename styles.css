@@ -118,6 +118,25 @@ nav ul{
     justify-content: center;
 }
 
+/* ---------- List Styles ---------- */
+li{
+    display: block;
+    text-align: center;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+}
+
+#offerings li{
+    display: block;
+    text-align: center;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+}
+
 /* ---------- Nav a Styles --------- */
 nav a{
     text-decoration: none;
