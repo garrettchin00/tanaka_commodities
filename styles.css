@@ -27,6 +27,38 @@
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20L0 20z' fill='%236b1869' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
+/* ---------- CSS RESET ---------- */
+img{
+	max-width: 100%;
+	height: auto;
+  image-rendering: crisp-edges;
+}
+figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+figcaption{
+    position: absolute;
+    text-align: center;
+	  font-size: 1.25em;
+    font-family: var(--font-family);
+    width: 150px;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px;
+    opacity: 0.8;
+}
+
+header img{
+    max-width: fit-content;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* ---------- Link Styles ---------- */
 a{
     display: block;
@@ -47,12 +79,6 @@ a{
     text-decoration-color: var(--red);
 }
 
-img{
-    width: 180px;
-    height: 172px;
-    position: absolute;
-    left: 0;
-}
 /* ---------- Body Styles ---------- */
 body{
     box-sizing: border-box;
@@ -138,16 +164,6 @@ nav ul{
 }
 
 /* ------- Ul Styles -------- */
-#offerings ol{
-    list-style-type: none;
-    padding-left: 0;
-    display: flex;
-    gap: 1rem;
-    margin: 0 auto;
-    float: none;
-    justify-content: center;
-}
-
 #contact ul{
     list-style-type: none;
     padding-left: 0;
