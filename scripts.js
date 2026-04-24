@@ -19,11 +19,20 @@ let newUser = {
   userName: "",
   userEmail: "",
   userZipCode: "",
+  userCity: "",
+  userCountry: "",
+  userPhone: "",
+  userAddress: "",
+  
   getUser: function(){
     return
     `<strong>User Name:</strong> ${this.userName}<br>
     <strong>Email:</strong> ${this.userEmail}<br>
-    <strong>Zip Code:</strong> ${this.userZipCode}`;
+    <strong>Zip Code:</strong> ${this.userZipCode}<br>
+    <strong>City:</strong> ${this.userCity}<br>
+    <strong>Country:</strong> ${this.userCountry}<br>
+    <strong>Phone:</strong> ${this.userPhone}<br>
+    <strong>Address:</strong> ${this.userAddress}`;
   }
 };
 
@@ -36,24 +45,35 @@ function validateForm(event){
   let uName = document.getElementById("userName");
   let email = document.getElementById("email");
   let zipCode = document.getElementById("zipCode");
+  let city = document.getElementById("city");
+  let country = document.getElementById("country");
+  let phone = document.getElementById("phone");
+  let address = document.getElementById("address");
   let fieldset = document.querySelector("fieldset");
   let agree = document.getElementById("agree");
   
   // this is where we'll display a message if they haven't agreed to the terms
   let terms = document.getElementById("termsError");
-  // containers for display to user
-  let food = document.getElementById("food");
+  // containers for display to user of their submission and any error messages
   let confirm = document.getElementById("confirm");
   
   // the regular expressions
   let uNameRegex = /^(?=.*\d+)(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[@!_.-]+).{6,}$/g;
   let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,3})$/;
   let zipRegex = /^\d{5}$/;
+  let cityRegex = /^[a-zA-Z\s]+$/;
+  let countryRegex = /^[a-zA-Z\s]+$/;
+  let phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  let addressRegex = /^[a-zA-Z0-9\s.,#-]+$/;
   
   // remove the border class given to inputs on previous submit of error
   uName.classList.remove("error");
   email.classList.remove("error");
   zipCode.classList.remove("error");
+  city.classList.remove("error");
+  country.classList.remove("error");
+  phone.classList.remove("error");
+  address.classList.remove("error");
   agree.classList.remove("error");
   
   // re-hide the output paragraph
@@ -63,6 +83,10 @@ function validateForm(event){
   uName.nextElementSibling.classList.add("hidden");
   email.nextElementSibling.classList.add("hidden");
   zipCode.nextElementSibling.classList.add("hidden");
+  city.nextElementSibling.classList.add("hidden");
+  country.nextElementSibling.classList.add("hidden");
+  phone.nextElementSibling.classList.add("hidden");
+  address.nextElementSibling.classList.add("hidden");
   terms.classList.add("hidden");
   confirm.innerHTML = "";
 
@@ -115,10 +139,70 @@ function validateForm(event){
     newUser.userZipCode = zipCode.value;
   }
   
+  // ensure that the city is valid
+  if(city.value === "" || !(cityRegex.test(city.value))){
+    // change our boolean flag because the form is not valid
+    isValid = false;
+    // add error class to input
+    city.classList.add("error");
+    // add error message for user about this input - "Please enter a valid city";
+    city.nextElementSibling.classList.remove("hidden");
+    // use the message from our map to log an error to the console
+    console.error(messages["cityMsg"]);
+  }else{ // this means that we have valid input on this data
+    // add this property to our object
+    newUser.userCity = city.value;
+  }
+
+  // ensure that the country is valid
+  if(country.value === "" || !(countryRegex.test(country.value))){
+    // change our boolean flag because the form is not valid
+    isValid = false;
+    // add error class to input
+    country.classList.add("error");
+    // add error message for user about this input - "Please enter a valid country";
+    country.nextElementSibling.classList.remove("hidden");
+    // use the message from our map to log an error to the console
+    console.error(messages["countryMsg"]);
+  }else{ // this means that we have valid input on this data
+    // add this property to our object
+    newUser.userCountry = country.value;
+  }
+
+  // ensure that the phone number is valid
+  if(phone.value === "" || !(phoneRegex.test(phone.value))){
+    // change our boolean flag because the form is not valid
+    isValid = false;
+    // add error class to input
+    phone.classList.add("error");
+    // add error message for user about this input - "Please enter a valid phone number";
+    phone.nextElementSibling.classList.remove("hidden");
+    // use the message from our map to log an error to the console
+    console.error(messages["phoneMsg"]);
+  }else{ // this means that we have valid input on this data
+    // add this property to our object
+    newUser.userPhone = phone.value;
+  }
+
+  // ensure that the address is valid
+  if(address.value === "" || !(addressRegex.test(address.value))){
+    // change our boolean flag because the form is not valid
+    isValid = false;
+    // add error class to input
+    address.classList.add("error");
+    // add error message for user about this input - "Please enter a valid address";
+    address.nextElementSibling.classList.remove("hidden");
+    // use the message from our map to log an error to the console
+    console.error(messages["addressMsg"]);
+  }else{ // this means that we have valid input on this data
+    // add this property to our object
+    newUser.userAddress = address.value;
+  }
+
     // if the user doesn't agree to terms and conditions, display a message 
   if(!agree.checked){
     // change our boolean flag because the form is not valid
-    isValid = false;
+
     // add the error class to the input
     agree.classList.add("error");
     // show the error message for the checkmark
@@ -146,11 +230,14 @@ function validateForm(event){
     uName.nextElementSibling.classList.add("hidden");
     email.nextElementSibling.classList.add("hidden");
     zipCode.nextElementSibling.classList.add("hidden");
+    city.nextElementSibling.classList.add("hidden");
+    country.nextElementSibling.classList.add("hidden");
+    phone.nextElementSibling.classList.add("hidden");
+    address.nextElementSibling.classList.add("hidden");
     agree.nextElementSibling.classList.add("hidden");
 
     // display the success message from the map to the user in an alert
     window.alert(messages["success"]);
-    
   }
 }
 

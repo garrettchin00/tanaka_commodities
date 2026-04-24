@@ -16,6 +16,8 @@
     --lt-gray: #f2f2f2;
     --purple: #6b1869;
     --magenta: #eb1cf0;
+    --box-shadow-sm: -3px 3px 6px var(--lt-med-gray);
+    --box-shadow-lg: -6px 6px 10px var(--lt-med-gray);
 
     /* ----- FONTS ----- */
     --font-family: 'Cabin', 'Open Sans', sans-serif;
@@ -29,6 +31,20 @@
 a{
     display: block;
     text-align: center;
+}
+
+#contact a{
+    display: block;
+    text-align: left;
+    color: var(--black);
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+}
+
+#contact a:hover{
+    color: var(--white);
+    text-decoration-color: var(--red);
 }
 
 img{
@@ -91,6 +107,20 @@ h1{
     color: var(--white);
 }
 
+#contact h2{
+    font-size: 1.5rem;
+    text-align: left;
+    font-family: var(--font-family);
+    color: var(--white);
+}
+
+#contact h3{
+    font-size: 1.25rem;
+    text-align: left;
+    font-family: var(--font-family);
+    color: var(--white);
+}
+
 /* ---------- Nav Ul Styles --------- */
 nav{
     color: var(--white);
@@ -118,10 +148,20 @@ nav ul{
     justify-content: center;
 }
 
+#contact ul{
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+    float: left;
+    justify-content: center;
+}
+
 /* ---------- List Styles ---------- */
 li{
     display: block;
-    text-align: center;
+    text-align: left;
     color: var(--white);
     font-size: 1.25rem;
     font-weight: bold;
@@ -131,6 +171,15 @@ li{
 #offerings li{
     display: block;
     text-align: center;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+}
+
+#contact li{
+    display: block;
+    text-align: left;
     color: var(--white);
     font-size: 1.25rem;
     font-weight: bold;
@@ -240,10 +289,14 @@ footer p{
 }
 
 form{
+  display: block;
   max-width: 350px;
   margin: 0 auto;
   padding: 0.5rem;
   font-size: 1.1rem;
+  color: var(--white);
+  font-family: var(--font-family);
+  text-align: left;
 }
 
 label{
@@ -272,13 +325,286 @@ input[type="text"], input[type="email"]{
   background-color: var(--white);
   outline: none;
   border: 1px solid var(--lt-gray);
-  box-shadow: var(--black);
+  box-shadow: var(--box-shadow-sm);
   line-height: 1;
   height: 2.5rem;
 }
 
+input[type="text"]:focus, input[type="email"]:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--black);
+}
+
+input[type="text"].error, input[type="email"].error{
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"].error:focus, input[type="email"].error:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"] + .error-message, input[type="email"] + .error-message{
+  display: block;
+  font-size: 0.9rem;
+  color: var(--magenta);
+  margin-top: 0.25rem;
+}
+
+input[type="text"], input[type="name"]{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--box-shadow-sm);
+  line-height: 1;
+  height: 2.5rem;
+}
+
+
+input[type="text"]:focus, input[type="name"]:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--black);
+}
+
+input[type="text"].error, input[type="name"].error{
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"].error:focus, input[type="name"].error:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"] + .error-message, input[type="name"] + .error-message{
+  display: block;
+  font-size: 0.9rem;
+  color: var(--magenta);
+  margin-top: 0.25rem;
+}
+
+input[type="text"], input[type="phone"]{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--box-shadow-sm);
+  line-height: 1;
+  height: 2.5rem;
+}
+
+input[type="text"]:focus, input[type="phone"]:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--black);
+}
+
+input[type="text"].error, input[type="phone"].error{
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"].error:focus, input[type="phone"].error:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"] + .error-message, input[type="phone"] + .error-message{
+  display: block;
+  font-size: 0.9rem;
+  color: var(--magenta);
+  margin-top: 0.25rem;
+}
+
+input[type="text"], input[type="address"]{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--box-shadow-sm);
+  line-height: 1;
+  height: 2.5rem;
+}
+
+input[type="text"]:focus, input[type="address"]:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--black);
+}
+
+input[type="text"].error, input[type="address"].error{
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"].error:focus, input[type="address"].error:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"] + .error-message, input[type="address"] + .error-message{
+  display: block;
+  font-size: 0.9rem;
+  color: var(--magenta);
+  margin-top: 0.25rem;
+}
+
+input[type="text"], input[type="city"]{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--box-shadow-sm);
+  line-height: 1;
+  height: 2.5rem;
+}
+
+input[type="text"]:focus, input[type="city"]:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--black);
+}
+
+input[type="text"].error, input[type="city"].error{
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"].error:focus, input[type="city"].error:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"] + .error-message, input[type="city"] + .error-message{
+  display: block;
+  font-size: 0.9rem;
+  color: var(--magenta);
+  margin-top: 0.25rem;
+}
+
+input[type="text"], input[type="state"]{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--box-shadow-sm);
+  line-height: 1;
+  height: 2.5rem;
+}
+
+input[type="text"]:focus, input[type="state"]:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--black);
+}
+
+input[type="text"].error, input[type="state"].error{
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"].error:focus, input[type="state"].error:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"] + .error-message, input[type="state"] + .error-message{
+  display: block;
+  font-size: 0.9rem;
+  color: var(--magenta);
+  margin-top: 0.25rem;
+}
+
+input[type="text"], input[type="zip"]{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--box-shadow-sm);
+  line-height: 1;
+  height: 2.5rem;
+}
+
+input[type="text"]:focus, input[type="zip"]:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--black);
+}
+
+input[type="text"].error, input[type="zip"].error{
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"].error:focus, input[type="zip"].error:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"] + .error-message, input[type="zip"] + .error-message{
+  display: block;
+  font-size: 0.9rem;
+  color: var(--magenta);
+  margin-top: 0.25rem;
+}
+
+input[type="text"], input[type="country"]{
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--lt-gray);
+  box-shadow: var(--box-shadow-sm);
+  line-height: 1;
+  height: 2.5rem;
+}
+
+input[type="text"]:focus, input[type="country"]:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--black);
+}
+
+input[type="text"].error, input[type="country"].error{
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"].error:focus, input[type="country"].error:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--magenta);
+}
+
+input[type="text"] + .error-message, input[type="country"] + .error-message{
+  display: block;
+  font-size: 0.9rem;
+  color: var(--magenta);
+  margin-top: 0.25rem;
+}
+
+input[type="submit"]{
+    background-color: var(--red);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--white);
+  font-size: 1.5em;
+    display: grid;
+    text-align: center;
+    width: 300px;
+  border: 2px solid var(--white);
+}
+
 input:focus{
-  box-shadow: var(--gray);
+  box-shadow: var(--box-shadow-lg);
   border: 2px solid var(--purple);
 }
 
@@ -372,7 +698,7 @@ span.radio_label{
   height: 1.5rem;
   margin-bottom: 1.1rem;
   border: 1px solid var(--lt-gray);
-  box-shadow: var(--gray);
+  box-shadow: var(--box-shadow-sm);
 }
 
 .checkbox_control svg{
@@ -389,6 +715,50 @@ span.radio_label{
   box-shadow: 0 0 0 0.05rem var(--white), 0 0 0.15rem 0.1rem #939393;
 }
 
-input[type="text"].error, input[type="email"].error, #agree.error + span.checkbox_control{
-  border: 2px solid var(--magenta);
+.checkbox_label{
+  line-height: 1;
+  height: auto;
+  color: var(--dk-gray);
+}
+
+/* ---------- Button Styles ---------- */
+.button{
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1.5em;
+  display: grid;
+  text-align: center;
+  width: 300px;
+  border: 2px solid var(--white);
+  font-family: var(--font-family);
+}
+.button:hover{
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.button:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--purple);
+}
+
+.button:active{
+  box-shadow: var(--box-shadow-sm);
+  border: 2px solid var(--purple);
+}
+
+.button a{
+  color: var(--red);
+  text-decoration: none;
+}
+.button a:hover{
+  color: var(--red);
+  text-decoration-color: var(--black);
+}
+.button a:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--gray);
 }
