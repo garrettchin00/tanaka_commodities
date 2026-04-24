@@ -138,7 +138,7 @@ nav ul{
 }
 
 /* ------- Ul Styles -------- */
-#offerings ul{
+#offerings ol{
     list-style-type: none;
     padding-left: 0;
     display: flex;
