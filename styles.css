@@ -34,274 +34,287 @@ img{
   image-rendering: crisp-edges;
 }
 figure{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 50px;
 }
 figcaption{
-    position: absolute;
-    text-align: center;
-	  font-size: 1.25em;
-    font-family: var(--font-family);
-    width: 150px;
-    background-color: var(--black);
-    color: var(--white);
-    padding: 10px;
-    opacity: 0.8;
+  position: absolute;
+  text-align: center;
+	font-size: 1.25em;
+  font-family: var(--font-family);
+  width: 150px;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px;
+  opacity: 0.8;
 }
 
 header img{
-    max-width: fit-content;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  max-width: fit-content;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ---------- Link Styles ---------- */
 a{
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
+  color: var(--white);
+}
+
+a:hover{
+  color: var(--red);
+  text-decoration-color: var(--white);
 }
 
 #contact a{
-    display: block;
-    text-align: left;
-    color: var(--black);
-    font-size: 1.25rem;
-    font-weight: bold;
-    font-family: 'Cabin', sans-serif;
+  display: block;
+  text-align: left;
+  color: var(--black);
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Cabin', sans-serif;
 }
 
 #contact a:hover{
-    color: var(--white);
-    text-decoration-color: var(--red);
+  color: var(--white);
+  text-decoration-color: var(--red);
 }
 
 /* ---------- Body Styles ---------- */
 body{
-    box-sizing: border-box;
-    font-size: 1.1rem;
-    font-family: var(--fonts);
-    margin: 0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-family: var(--fonts);
+  margin: 0;
 }
 
 /* Text Styles */
 p{
-    display: grid;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-    font-size: 1rem;
-    font-family: 'Open Sans', sans-serif;
-    color: var(--white);
+  display: grid;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin: 0 auto;
+  unicode-bidi: isolate;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--white);
+}
+
+div p{
+  display: grid;
+  place-items: center;
+  height: 150px;
 }
 
 /* ---------- Header Styles ---------- */
 header{
-    padding: 1rem;
-    width: 968px;
-    margin: 0 auto;
-    background-color: var(--black);
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
+  padding: 1rem;
+  width: 968px;
+  margin: 0 auto;
+  background-color: var(--black);
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
 }
 
 /* ----- HEADING STYLES ----- */
 h1{
-    font-size: 3rem;
-    text-align: center;
-    color: var(--white);
-    font-family: var(--font-family);
+  font-size: 3rem;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--font-family);
 }
 
 #about h2{
-    font-size: 1.5rem;
-    text-align: left;
-    font-family: var(--font-family);
-    color: var(--white);
+  font-size: 1.5rem;
+  text-align: left;
+  font-family: var(--font-family);
+  color: var(--white);
 }
 
 #offerings h2{
-    font-size: 1.5rem;
-    text-align: left;
-    font-family: var(--font-family);
-    color: var(--white);
+  font-size: 1.5rem;
+  text-align: left;
+  font-family: var(--font-family);
+  color: var(--white);
 }
 
 #contact h2{
-    font-size: 1.5rem;
-    text-align: left;
-    font-family: var(--font-family);
-    color: var(--white);
+  font-size: 1.5rem;
+  text-align: left;
+  font-family: var(--font-family);
+  color: var(--white);
 }
 
 #contact h3{
-    font-size: 1.25rem;
-    text-align: left;
-    font-family: var(--font-family);
-    color: var(--white);
+  font-size: 1.25rem;
+  text-align: left;
+  font-family: var(--font-family);
+  color: var(--white);
 }
 
 /* ---------- Nav Ul Styles --------- */
 nav{
-    color: var(--white);
-    font-family: var(--font-family);
+  color: var(--white);
+  font-family: var(--font-family);
 }
 
 nav ul{
-    list-style-type: none;
-    padding-left: 0;
-    display: flex;
-    gap: 1rem;
-    margin: 0 auto;
-    float: none;
-    justify-content: center;
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  float: none;
+  justify-content: center;
 }
 
 /* ------- Ul Styles -------- */
 #contact ul{
-    list-style-type: none;
-    padding-left: 0;
-    display: flex;
-    gap: 1rem;
-    margin: 0 auto;
-    float: left;
-    justify-content: center;
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  float: left;
+  justify-content: center;
 }
 
 /* ---------- List Styles ---------- */
 li{
-    display: block;
-    text-align: left;
-    color: var(--white);
-    font-size: 1.25rem;
-    font-weight: bold;
-    font-family: 'Cabin', sans-serif;
+  display: block;
+  text-align: left;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Cabin', sans-serif;
 }
 
 #offerings li{
-    display: block;
-    text-align: center;
-    color: var(--white);
-    font-size: 1.25rem;
-    font-weight: bold;
-    font-family: 'Cabin', sans-serif;
+  display: block;
+  text-align: center;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Cabin', sans-serif;
 }
 
 #contact li{
-    display: block;
-    text-align: left;
-    color: var(--white);
-    font-size: 1.25rem;
-    font-weight: bold;
-    font-family: 'Cabin', sans-serif;
+  display: block;
+  text-align: left;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Cabin', sans-serif;
 }
 
 /* ---------- Nav a Styles --------- */
 nav a{
-    text-decoration: none;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    color: var(--white);
-    font-size: 1.25rem;
-    font-weight: bold;
+  text-decoration: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 /* ---------- Navigation a Hover Styles ---------- */
 nav a:hover{
-    border-color: var(--red);
-    color: var(--red);
+  border-color: var(--red);
+  color: var(--red);
 }
 
 /* ---------- Main Styles ---------- */
 main{
-    width: 1000px;
-    padding: 2rem 0;
-    margin-top: 0;
-    margin-left: auto;
-    margin-bottom: 8px;
-    margin-right: auto;
-    background-color: var(--red);
+  width: 1000px;
+  padding: 2rem 0;
+  margin-top: 0;
+  margin-left: auto;
+  margin-bottom: 8px;
+  margin-right: auto;
+  background-color: var(--red);
 }
 
 /* ---------- Main Section Styles ---------- */
 main > section{
-    padding-top: 2rem;
-    padding-bottom: 9rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 9rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* ---------- Main H2 Styles ---------- */
 main h2{
-    font-size: 1rem;
-    padding: 0;
-    width: fit-content;
-    margin: 0;
-    background-color: var(--red);
-    color: var(--dk-gray);
+  font-size: 1rem;
+  padding: 0;
+  width: fit-content;
+  margin: 0;
+  background-color: var(--red);
+  color: var(--dk-gray);
 }
 
 iframe{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    float: right;
-    top: -150px;
-    overflow: clip !important;
-    border-width: 2px;
-    border-style: inset;
-    border-color: initial;
-    border-image: initial;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  float: right;
+  top: -150px;
+  overflow: clip !important;
+  border-width: 2px;
+  border-style: inset;
+  border-color: initial;
+  border-image: initial;
 }
 
 /* ---------- Footer Styles ---------- */
 footer{
-    padding: 1rem;
-    width: 968px;
-    margin: 0 auto;
-    background-color: var(--white);
-    text-align: center;
-    padding-top: 2rem;
-    font-family: 'Open Sans', sans-serif;
+  padding: 1rem;
+  width: 968px;
+  margin: 0 auto;
+  background-color: var(--white);
+  text-align: center;
+  padding-top: 2rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 footer h2{
-    margin: 0 auto;
-    font-size: 1.35rem;
-    line-height: 1;
-    grid-column: 1/-1;
+  margin: 0 auto;
+  font-size: 1.35rem;
+  line-height: 1;
+  grid-column: 1/-1;
 }
 
 footer section{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.5rem 1rem;
-    width: 520px;
-    text-align: center;
-    margin: 0 auto 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem 1rem;
+  width: 520px;
+  text-align: center;
+  margin: 0 auto 1rem auto;
 }
 
 footer a{
-    padding: 0.5rem;
-    color: var(--black);
-    text-underline-offset: 4px;
-    text-decoration-color: var(--red);
-    text-decoration-thickness: 2px;
+  padding: 0.5rem;
+  color: var(--black);
+  text-underline-offset: 4px;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 2px;
 }
 
 footer a:hover{
-    color: var(--red);
+  color: var(--red);
 }
 
 footer p{
-    margin: 0 auto;
-    font-size: 1rem;
+  margin: 0 auto;
+  font-size: 1rem;
 }
 
 form{
@@ -607,15 +620,15 @@ input[type="text"] + .error-message, input[type="country"] + .error-message{
 }
 
 input[type="submit"]{
-    background-color: var(--red);
-    border-radius: 5px;
-    padding: 10px;
-    text-decoration: none;
-    color: var(--white);
+  background-color: var(--red);
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--white);
   font-size: 1.5em;
-    display: grid;
-    text-align: center;
-    width: 300px;
+  display: grid;
+  text-align: center;
+  width: 300px;
   border: 2px solid var(--white);
 }
 
@@ -784,44 +797,44 @@ span.radio_label{
 
 /* ---------- Responsive Styles ---------- */
 @media (max-width: 768px){
-    main{
-        width: 90%;
-    }
-    header, footer{
-        width: 90%;
-    }
-    nav ul{
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    #contact ul{
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    iframe{
-        display: none;
-    }
+  main{
+    width: 90%;
+  }
+  header, footer{
+    width: 90%;
+  }
+  nav ul{
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #contact ul{
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  iframe{
+    display: none;
+  }
 }
 
 /* ---------- Accessibility Styles ---------- */*{
-    outline: none;
+  outline: none;
 }
 
 .game-container{
-    border: 2px solid var(--white);
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
+  border: 2px solid var(--white);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
 }
 
 .game-container h2{
-    margin-top: 0;
-    color: var(--white);
-    font-family: var(--font-family);
-    font-size: large;
-    margin: 0 auto 20px auto;
+  margin-top: 0;
+  color: var(--white);
+  font-family: var(--font-family);
+  font-size: large;
+  margin: 0 auto 20px auto;
 }
 
 input{
