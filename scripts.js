@@ -296,6 +296,106 @@ document.getElementById("newAcct").addEventListener("submit", validateForm);
 // call our map function
 mapMessages();
 
+// Return a random number between min and max (inclusive).
+//this function is from your book
+function getRandomNumber(min, max) {
+   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//function to run all math object functions on click
+function mathMethods(evt){
+  //prevent the default submit action from happening
+  evt.preventDefault();
+  
+  //an array of numbers for the methods that work on a collection
+  let numbers = [12, 35, -100, -1, 7];
+  
+  //read in the two entered numbers and save each to a variable
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  
+  //let's add our two numbers to the numbers array also
+  numbers.push(num1, num2);
+  
+  //variable to build the string display output to the screen
+  let output = "";
+  
+  //variable to store the ol where we'll display output
+  let outputList = document.getElementById("results");
+  
+  //variable to store the section where we'll output the result of the array methods
+  let arrayOutput = document.getElementById("arrayMethods");
+  
+  //basic error checking to make sure that the form has two numerical inputs
+  if(num1 === "" || num2 === "" || isNaN(num1) || isNaN(num2)){
+    output = `<p class="error">Please enter numercial values in both form inputs and submit again</p>`;
+  }else{
+  
+    //absolute value TODO output/call
+    output += `<li>The absolute value of ${num1} is ${Math.abs(num1)}</li>`;
+
+    //ceiling TODO output/call
+    output += `<li>The ceiling value of ${num2} is ${Math.ceil(num2)}</li>`;
+
+    //cosine TODO output/call
+    output += `<li>The cosine value of ${num1} is ${Math.cos(num1)}</li>`;
+
+    //floor TODO output/call
+    output += `<li>The floor value of ${num2} is ${Math.floor(num2)}</li>`;
+
+    //logarithm TODO output/call
+    output += `<li>The logarithm value of ${num1} is ${Math.log(num1)}</li>`;
+
+    //power TODO output/call
+    output += `<li>${num1} raised to the power of ${num1} is ${Math.pow(num1, num2)}</li>`;
+
+    //round TODO output/call
+    output += `<li>${num1} rounded is ${Math.round(num1)}</li>`;
+
+    //sine TODO output/call
+    output += `<li>The sine value of ${num2} is ${Math.sin(num2)}</li>`;
+
+    //square root TODO output/call
+    output += `<li>The square root of ${num1} is ${Math.sqrt(num1)}</li>`;
+
+    //tangent TODO output/call
+    output += `<li>The tangent value of ${num2} is ${Math.tan(num2)}</li>`;
+
+    //random number generator (between number 1 and number 2)
+    if(num1 < num2){
+      //TODO get random number and display in output
+      let newRandom = getRandomNumber(parseInt(num1), parseInt(num2));
+      output += `<li>A random number between ${num1} and ${num2} is ${newRandom}</li>`;
+    }else{
+     //TODO get random number and display in output
+      let newRandom = getRandomNumber(parseInt(num2), parseInt(num1));
+      output += `<li>A random number between ${num2} and ${num1} is ${newRandom}</li>`;
+    }
+
+    //display the results from the previous math methods to the screen
+      outputList.innerHTML = output;
+
+        //these are the methods we'll use with the array we have above
+      //we'll let the user know that first
+      output = `<h4>These methods are run on the numbers array, which contains these values:</h4>`;
+      //display the values in the numbers array
+      numbers.forEach(function(number, index){
+        output += `At index ${index} the value is ${number}<br>`;
+      });
+
+      //max value of the array of numbers
+      //the three dots are called the spread operator and they allow us to pass the array to the max and min methods without needing to use more complex syntax because the array doens't have a lot of elements
+    //TODO - find and display the max value in the numbers array
+      output += `<ol><li>The max value of the numbers array is ${Math.max(...numbers)}</li>`;
+
+      //min value of the array of numbers
+      //TODO - find and display the min value in the numbers array
+      output += `<li>The min value of the numbers array is ${Math.min(...numbers)} </li></ol>`;
+    }
+    //display the output string for the array methods (or errors from missing input values) in the correct place on the page
+      arrayOutput.innerHTML = output;
+  }
+
 //function for the Snake Eyes Game
 function snakeEyes(){
   //get the two spans where we'll display the numbers, and the one for the message
@@ -319,9 +419,8 @@ function snakeEyes(){
   }
 }
 
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+//attach an event listener to the form button on submit to call the function
+document.getElementById("mySubmit").addEventListener("click", mathMethods);
 
 //attach an event listener to the button for the game
 document.getElementById("gamePlay").addEventListener("click", snakeEyes);
