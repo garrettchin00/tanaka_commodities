@@ -1063,7 +1063,7 @@ input:focus, button:focus{
 #results{
   width: 50%;
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: var(--font-family);
 }
 
 #results li{
