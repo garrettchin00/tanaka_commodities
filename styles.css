@@ -809,12 +809,12 @@ span.radio_label{
 
 /* Snake Eyes Game Accessibility */
 input:focus, button:focus{
-  outline: 4px solid var(--blue);
+  outline: 4px solid var(--black);
   outline-offset: 2px;
 }
 
 .error{
-  color: var(--orange);
+  color: var(--magenta);
   font-weight: bold;
   font-size: 1.3rem;
 }
