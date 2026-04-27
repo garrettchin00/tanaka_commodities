@@ -962,58 +962,72 @@ input:focus, button:focus{
 
 #gamePlay:disabled + #snakeEyesMsg{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg:hover{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg:focus{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg:active{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results:hover{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results:focus{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results:active{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results li{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results li:hover{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results li:focus{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results li:active{
   color: var(--gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results li:nth-child(odd){
   background-color: var(--lt-gray);
+  font-family: var(--font-family);
 }
 
 #gamePlay:disabled + #snakeEyesMsg + #results li:nth-child(even){
   background-color: var(--lt-gray);
+  font-family: var(--font-family);
 }
 
 #random1, #random2{
