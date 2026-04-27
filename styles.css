@@ -864,6 +864,19 @@ input:focus, button:focus{
   padding: 0.5rem;
 }
 
+#gamePlay.button{
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1.5em;
+  display: grid;
+  text-align: center;
+  width: 300px;
+  border: 2px solid var(--white);
+}
+
 #gamePlay:focus{
   box-shadow: var(--box-shadow-lg);
   border: 2px solid var(--purple);
