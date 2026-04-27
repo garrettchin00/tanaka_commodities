@@ -1025,6 +1025,7 @@ input:focus, button:focus{
   background-color: var(--white);
   color: var(--black);
   border: 2px solid var(--lt-gray);
+  font-family: var(--font-family);
 }
 
 #random1:focus, #random2:focus{
@@ -1042,6 +1043,7 @@ input:focus, button:focus{
   height: 1.5em;
   font-size: 1.25rem;
   color: var(--white);
+  font-family: var(--font-family);
 }
 
 #results{
