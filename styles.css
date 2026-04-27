@@ -805,28 +805,263 @@ span.radio_label{
 }
 
 /* Snake Eyes Game Accessibility */
+input:focus, button:focus{
+  outline: 4px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.error{
+  color: var(--orange);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+#game h2{
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: var(--font-family);
+  color: var(--white);
+}
+
+#game p{
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+#random1, #random2{
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+}
+
+#snakeEyesMsg{
+  display: block;
+  margin: 0.25em auto;
+  height: 1.5em;
+}
+
+#results{
+/*   width: 50%; */
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+#arrayMethods{
+  padding: 1rem 0;
+}
+
+#game{
+  margin: 0 auto;
+  text-align: center;
+}
+
 #gamePlay{
-    background-color: var(--white);
-    border-radius: 5px;
-    padding: 10px;
-    text-decoration: none;
-    color: var(--black);
-    font-size: 1.5em;
-    display: grid;
-    text-align: center;
-    width: 300px;
-    border: 2px solid var(--white);
-    font-family: var(--font-family);
+  margin-top: 1rem;
+  background-color: var(--white);
+  color: var(--black);
+  border: 2px solid var(--lt-gray);
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
-#gamePlay:hover{
-    border-color: var(--red);
-    color: var(--red);
-}
+
 #gamePlay:focus{
-    box-shadow: var(--box-shadow-lg);
-    border: 2px solid var(--purple);
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--purple);
 }
+
 #gamePlay:active{
-    box-shadow: var(--box-shadow-sm);
-    border: 2px solid var(--purple);
+  box-shadow: var(--box-shadow-sm);
+  border: 2px solid var(--purple);
+}
+
+#gamePlay:hover{
+  border-color: var(--red);
+  color: var(--red);
+}
+
+#gamePlay a{
+  color: var(--red);
+  text-decoration: none;
+}
+
+#gamePlay a:hover{
+  color: var(--red);
+  text-decoration-color: var(--black);
+}
+
+#gamePlay:focus a{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--gray);
+}
+
+#gamePlay:active a{
+  box-shadow: var(--box-shadow-sm);
+  border: 2px solid var(--gray);
+}
+
+#gamePlay:disabled{
+  background-color: var(--lt-gray);
+  color: var(--gray);
+  border: 2px solid var(--lt-gray);
+  cursor: not-allowed;
+}
+
+#gamePlay:disabled:hover{
+  background-color: var(--lt-gray);
+  color: var(--gray);
+  border: 2px solid var(--lt-gray);
+  cursor: not-allowed;
+}
+
+#gamePlay:disabled:focus{
+  background-color: var(--lt-gray);
+  color: var(--gray);
+  border: 2px solid var(--lt-gray);
+  cursor: not-allowed;
+}
+
+#gamePlay:disabled:active{
+  background-color: var(--lt-gray);
+  color: var(--gray);
+  border: 2px solid var(--lt-gray);
+  cursor: not-allowed;
+}
+
+#gamePlay:disabled a{
+  color: var(--gray);
+  text-decoration: none;
+}
+
+#gamePlay:disabled a:hover{
+  color: var(--gray);
+  text-decoration: none;
+}
+
+#gamePlay:disabled a:focus{
+  color: var(--gray);
+  text-decoration: none;
+}
+
+#gamePlay:disabled a:active{
+  color: var(--gray);
+  text-decoration: none;
+}
+
+#gamePlay:disabled + #snakeEyesMsg{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg:hover{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg:focus{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg:active{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results:hover{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results:focus{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results:active{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results li{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results li:hover{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results li:focus{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results li:active{
+  color: var(--gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results li:nth-child(odd){
+  background-color: var(--lt-gray);
+}
+
+#gamePlay:disabled + #snakeEyesMsg + #results li:nth-child(even){
+  background-color: var(--lt-gray);
+}
+
+#random1, #random2{
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  font-size: 1.5rem;
+  line-height: 2em;
+  background-color: var(--white);
+  color: var(--black);
+  border: 2px solid var(--lt-gray);
+}
+
+#random1:focus, #random2:focus{
+  box-shadow: var(--box-shadow-lg);
+  border: 2px solid var(--purple);
+}
+
+#random1.error, #random2.error{
+  border: 2px solid var(--magenta);
+}
+
+#snakeEyesMsg{
+  display: block;
+  margin: 0.25em auto;
+  height: 1.5em;
+  font-size: 1.25rem;
+  color: var(--white);
+}
+
+#results{
+  width: 50%;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+#results li{
+  padding-top: 0.4em;
+}
+
+#results li:nth-child(odd){
+  background-color: var(--white);
+  color: var(--black);
+}
+
+#results li:nth-child(even){
+  background-color: var(--white);
+  color: var(--black);
+}
+
+strong{
+  font-weight: bold;
+  color: var(--green);
+}
+
+footer{
+  margin-top: 1rem;
+}
+
+@media (hover:hover){
+  button:hover, input[type=submit]:hover{
+    box-shadow: 3px 3px 6px var(--med-gray);
+  }
 }
