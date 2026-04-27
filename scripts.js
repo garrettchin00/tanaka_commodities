@@ -323,8 +323,5 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//attach an event listener to the form button on submit to call the function
-document.getElementById("mySubmit").addEventListener("click", snakeEyes);
-
 //attach an event listener to the button for the game
 document.getElementById("gamePlay").addEventListener("click", snakeEyes);
