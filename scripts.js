@@ -297,25 +297,6 @@ document.getElementById("newAcct").addEventListener("submit", validateForm);
 mapMessages();
 
 //function for the Snake Eyes Game
-
-// 1. Create the elements
-const section = document.createElement('section');
-section.id = 'game';
-
-const h2 = document.createElement('h2');
-h2.textContent = 'Snake Eyes Game';
-
-const button = document.createElement('button');
-button.id = 'gamePlay';
-button.textContent = 'Play!';
-
-// 2. Build the structure
-section.appendChild(h2);
-section.appendChild(button);
-
-// 3. Add to the page
-document.body.appendChild(section);
-
 function snakeEyes(){
   //get the two spans where we'll display the numbers, and the one for the message
   let dieDisplay1 = document.getElementById("random1");
