@@ -1066,7 +1066,7 @@ input:focus, button:focus{
 
 strong{
   font-weight: bold;
-  color: var(--green);
+  color: var(--black);
 }
 
 footer{
@@ -1075,6 +1075,6 @@ footer{
 
 @media (hover:hover){
   button:hover, input[type=submit]:hover{
-    box-shadow: 3px 3px 6px var(--med-gray);
+    box-shadow: 3px 3px 6px var(--lt-gray);
   }
 }
