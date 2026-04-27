@@ -778,3 +778,55 @@ span.radio_label{
   box-shadow: var(--box-shadow-lg);
   border: 2px solid var(--gray);
 }
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 768px){
+    main{
+        width: 90%;
+    }
+    header, footer{
+        width: 90%;
+    }
+    nav ul{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    #contact ul{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    iframe{
+        display: none;
+    }
+}
+
+/* ---------- Accessibility Styles ---------- */*{
+    outline: none;
+}
+
+/* Snake Eyes Game Accessibility */
+#gamePlay{
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.5em;
+    display: grid;
+    text-align: center;
+    width: 300px;
+    border: 2px solid var(--white);
+    font-family: var(--font-family);
+}
+#gamePlay:hover{
+    border-color: var(--red);
+    color: var(--red);
+}
+#gamePlay:focus{
+    box-shadow: var(--box-shadow-lg);
+    border: 2px solid var(--purple);
+}
+#gamePlay:active{
+    box-shadow: var(--box-shadow-sm);
+    border: 2px solid var(--purple);
+}

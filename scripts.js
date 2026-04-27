@@ -295,3 +295,32 @@ function mapMessages(){
 document.getElementById("newAcct").addEventListener("submit", validateForm);
 // call our map function
 mapMessages();
+
+//function for the Snake Eyes Game
+function snakeEyes(){
+  //get the two spans where we'll display the numbers, and the one for the message
+  let dieDisplay1 = document.getElementById("random1");
+  let dieDisplay2 = document.getElementById("random2");
+  let gameMessage = document.getElementById("snakeEyesMsg");
+  
+  //generate two random numbers between 1 and six (like rolling dice)
+  let die1 = getRandomNumber(1, 6);
+  let die2 = getRandomNumber(1, 6);
+  
+  //display those numbers to the screen
+  dieDisplay1.innerHTML = die1;
+  dieDisplay2.innerHTML = die2;
+  
+  //see if they match, then display winning message
+  if(die1 === 1 && die2 === 1){
+    gameMessage.textContent = "Snake Eyes! You Win!"
+  }else{
+    gameMessage.textContent = "You lose. Try Again";
+  }
+}
+
+//attach an event listener to the form button on submit to call the function
+document.getElementById("mySubmit").addEventListener("click", mathMethods);
+
+//attach an event listener to the button for the game
+document.getElementById("gamePlay").addEventListener("click", snakeEyes);
