@@ -296,28 +296,33 @@ document.getElementById("newAcct").addEventListener("submit", validateForm);
 // call our map function
 mapMessages();
 
-//function for the Snake Eyes Game
-function snakeEyes(){
-  //get the two spans where we'll display the numbers, and the one for the message
-  let dieDisplay1 = document.getElementById("random1");
-  let dieDisplay2 = document.getElementById("random2");
-  let gameMessage = document.getElementById("snakeEyesMsg");
-  
-  //generate two random numbers between 1 and six (like rolling dice)
-  let die1 = getRandomNumber(1, 6);
-  let die2 = getRandomNumber(1, 6);
-  
-  //display those numbers to the screen
-  dieDisplay1.innerHTML = die1;
-  dieDisplay2.innerHTML = die2;
-  
-  //see if they match, then display winning message
-  if(die1 === 1 && die2 === 1){
-    gameMessage.textContent = "Snake Eyes! You Win!"
-  }else{
-    gameMessage.textContent = "You lose. Try Again";
-  }
-}
+document.getElementById('playBtn').addEventListener('click', function() {
+    // 1. Get user input
+    let userGuess = parseInt(document.getElementById('userGuess').value);
+    let resultMessage = document.getElementById('resultMessage');
+    let displayUser = document.getElementById('displayUser');
+    let displayRandom = document.getElementById('displayRandom');
 
-//attach an event listener to the button for the game
-document.getElementById("gamePlay").addEventListener("click", snakeEyes);
+    // 2. Validate input
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
+        resultMessage.innerHTML = "Please enter a number between 1 and 10.";
+        resultMessage.style.color = "white";
+        return;
+    }
+
+    // 3. Generate random number 1-10
+    let randomNum = Math.floor(Math.random() * 10) + 1;
+
+    // 4. Display numbers
+    displayUser.innerHTML = userGuess;
+    displayRandom.innerHTML = randomNum;
+
+    // 5. Compare and provide feedback
+    if (userGuess === randomNum) {
+        resultMessage.innerHTML = "You win! 🎉";
+        resultMessage.style.color = "white";
+    } else {
+        resultMessage.innerHTML = "You did not win. Try again! 🔄";
+        resultMessage.style.color = "black";
+    }
+});

@@ -66,14 +66,19 @@
                 <p>We are committed to providing high-quality products at affordable prices. Check back regularly for new additions to our offerings and special discounts!</p>
             </section>
             
-            <section id="game">
-                <h2>Snake Eyes Game</h2>
-                <p>Click the button to generate two random numbers. If you get two ones, you win!</p>
-                <span id="random1"></span>
-                <span id="random2"></span>
-                <span id="snakeEyesMsg"></span>
-                <button id="gamePlay">Play!</button>
-            </section>
+            <div class="game-container">
+                <h2>Game Play</h2>
+                <p>Guess a number between 1 and 10:</p>
+                <input type="number" id="userGuess" min="1" max="10" placeholder="1-10">
+                <button id="playBtn">Play</button>
+                
+                <div class="results-area">
+                    <p>Your Guess: <span id="displayUser">?</span></p>
+                    <p>Random Number: <span id="displayRandom">?</span></p>
+                    <h3 id="resultMessage"></h3>
+                </div>
+            </div>
+
         </main>
         
         <footer>
@@ -86,23 +91,34 @@
         </footer>
         
         <script>
-            document.getElementById('gamePlay').addEventListener('click', function() {
-                // Generate random numbers 1-6
-                const die1 = Math.floor(Math.random() * 6) + 1;
-                const die2 = Math.floor(Math.random() * 6) + 1;
+            document.getElementById('playBtn').addEventListener('click', function() {
+                // 1. Get user input
+                let userGuess = parseInt(document.getElementById('userGuess').value);
+                let resultMessage = document.getElementById('resultMessage');
+                let displayUser = document.getElementById('displayUser');
+                let displayRandom = document.getElementById('displayRandom');
 
-                // Update UI
-                document.getElementById('random1').textContent = die1;
-                document.getElementById('random2').textContent = die2;
+                // 2. Validate input
+                if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
+                    resultMessage.innerHTML = "Please enter a number between 1 and 10.";
+                    resultMessage.style.color = "white";
+                    return;
+                }
 
-                // Check for Snake Eyes
-                const msg = document.getElementById('snakeEyesMsg');
-                if (die1 === 1 && die2 === 1) {
-                msg.textContent = "🎲 Snake Eyes! You win!";
-                msg.style.color = "white";
+                // 3. Generate random number 1-10
+                let randomNum = Math.floor(Math.random() * 10) + 1;
+
+                // 4. Display numbers
+                displayUser.innerHTML = userGuess;
+                displayRandom.innerHTML = randomNum;
+
+                // 5. Compare and provide feedback
+                if (userGuess === randomNum) {
+                    resultMessage.innerHTML = "You win! 🎉";
+                    resultMessage.style.color = "white";
                 } else {
-                msg.textContent = "Try again!";
-                msg.style.color = "black";
+                    resultMessage.innerHTML = "You did not win. Try again! 🔄";
+                    resultMessage.style.color = "black";
                 }
             });
         </script>
