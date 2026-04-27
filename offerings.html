@@ -86,3 +86,25 @@
         </section>
     </footer>
 </html>
+
+<script>
+  document.getElementById('gamePlay').addEventListener('click', function() {
+    // Generate random numbers 1-6
+    const die1 = Math.floor(Math.random() * 6) + 1;
+    const die2 = Math.floor(Math.random() * 6) + 1;
+
+    // Update UI
+    document.getElementById('random1').textContent = die1;
+    document.getElementById('random2').textContent = die2;
+
+    // Check for Snake Eyes
+    const msg = document.getElementById('snakeEyesMsg');
+    if (die1 === 1 && die2 === 1) {
+      msg.textContent = "🎲 Snake Eyes! You win!";
+      msg.style.color = "white";
+    } else {
+      msg.textContent = "Try again!";
+      msg.style.color = "black";
+    }
+  });
+</script>
