@@ -738,7 +738,7 @@ span.radio_label{
 }
 
 /* ---------- Button Styles ---------- */
-.button{
+#submit.button{
   background-color: var(--white);
   border-radius: 5px;
   padding: 10px;
@@ -751,30 +751,33 @@ span.radio_label{
   border: 2px solid var(--white);
   font-family: var(--font-family);
 }
-.button:hover{
+
+#submit.button:hover{
   border-color: var(--red);
   color: var(--red);
 }
 
-.button:focus{
+#submit.button:focus{
   box-shadow: var(--box-shadow-lg);
   border: 2px solid var(--purple);
 }
 
-.button:active{
+#submit.button:active{
   box-shadow: var(--box-shadow-sm);
   border: 2px solid var(--purple);
 }
 
-.button a{
+#submit.button a{
   color: var(--red);
   text-decoration: none;
 }
-.button a:hover{
+
+#submit.button a:hover{
   color: var(--red);
   text-decoration-color: var(--black);
 }
-.button a:focus{
+
+#submit.button a:focus{
   box-shadow: var(--box-shadow-lg);
   border: 2px solid var(--gray);
 }
