@@ -319,10 +319,10 @@ document.getElementById('playBtn').addEventListener('click', function() {
 
     // 5. Compare and provide feedback
     if (userGuess === randomNum) {
-        resultMessage.innerHTML = "You win! 🎉";
+        resultMessage.innerHTML = "You win!";
         resultMessage.style.color = "white";
     } else {
-        resultMessage.innerHTML = "You did not win. Try again! 🔄";
+        resultMessage.innerHTML = "You did not win. Try again!";
         resultMessage.style.color = "black";
     }
 });
