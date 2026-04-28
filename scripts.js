@@ -245,7 +245,7 @@ function displaySubmission(){
   // container to display the user object
   let confirm = document.getElementById("confirm");
   
-  // un-hide the container by rmoving the hidden class
+  // un-hide the container by removing the hidden class
   confirm.classList.remove("hidden");
   
   // reset text in the confirm paragraph to ready for new output
@@ -310,7 +310,7 @@ document.getElementById('playBtn').addEventListener('click', function() {
         return;
     }
 
-    // 3. Generate random number 1-10
+    // 3. Generate random number from 1-10
     let randomNum = Math.floor(Math.random() * 10) + 1;
 
     // 4. Display numbers
