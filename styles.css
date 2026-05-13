@@ -896,11 +896,6 @@ button:hover{
   margin-top: 10px;
   font-family: var(--font-family);
   font-size: 20px;
-}
-
-#displayResult h3{
-  font-size: 20px;
   opacity: 1;
-  font-family: var(--font-family);
   color: var(--white);
 }
