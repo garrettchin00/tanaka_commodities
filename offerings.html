@@ -82,7 +82,7 @@
                 <div class="results-area">
                     <p>Your Guess: <span id="displayUser">?</span></p>
                     <p>Random Number: <span id="displayRandom">?</span></p>
-                    <h3 id="resultMessage"></h3>
+                    <p>Results: <span id="displayResult">?</span></p>
                 </div>
             </div>
 
@@ -101,14 +101,14 @@
             document.getElementById('playBtn').addEventListener('click', function() {
                 // 1. Get user input
                 let userGuess = parseInt(document.getElementById('userGuess').value);
-                let resultMessage = document.getElementById('resultMessage');
+                let displayResult = document.getElementById('displayResult');
                 let displayUser = document.getElementById('displayUser');
                 let displayRandom = document.getElementById('displayRandom');
 
                 // 2. Validate input
                 if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
-                    resultMessage.innerHTML = "Please enter a number between 1 and 10.";
-                    resultMessage.style.color = "white";
+                    displayResult.innerHTML = "Please enter a number between 1 and 10.";
+                    displayResult.style.color = "white";
                     return;
                 }
 
@@ -121,11 +121,11 @@
 
                 // 5. Compare and provide feedback
                 if (userGuess === randomNum) {
-                    resultMessage.innerHTML = "You win!";
-                    resultMessage.style.color = "white";
+                    displayResult.innerHTML = "You win!";
+                    displayResult.style.color = "white";
                 } else {
-                    resultMessage.innerHTML = "You did not win. Try again!";
-                    resultMessage.style.color = "black";
+                    displayResult.innerHTML = "You did not win. Try again!";
+                    displayResult.style.color = "black";
                 }
             });
         </script>

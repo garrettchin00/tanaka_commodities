@@ -299,14 +299,14 @@ mapMessages();
 document.getElementById('playBtn').addEventListener('click', function() {
     // 1. Get user input
     let userGuess = parseInt(document.getElementById('userGuess').value);
-    let resultMessage = document.getElementById('resultMessage');
+    let displayResult = document.getElementById('displayResult');
     let displayUser = document.getElementById('displayUser');
     let displayRandom = document.getElementById('displayRandom');
 
     // 2. Validate input
     if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
-        resultMessage.innerHTML = "Please enter a number between 1 and 10.";
-        resultMessage.style.color = "white";
+        displayResult.innerHTML = "Please enter a number between 1 and 10.";
+        displayResult.style.color = "white";
         return;
     }
 
@@ -319,10 +319,10 @@ document.getElementById('playBtn').addEventListener('click', function() {
 
     // 5. Compare and provide feedback
     if (userGuess === randomNum) {
-        resultMessage.innerHTML = "You win!";
-        resultMessage.style.color = "white";
+        displayResult.innerHTML = "You win!";
+        displayResult.style.color = "white";
     } else {
-        resultMessage.innerHTML = "You did not win. Try again!";
-        resultMessage.style.color = "black";
+        displayResult.innerHTML = "You did not win. Try again!";
+        displayResult.style.color = "black";
     }
 });
