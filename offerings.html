@@ -85,7 +85,39 @@
                     <p>Results: <span id="displayResult">?</span></p>
                 </div>
             </div>
+            
+            <script>
+                document.getElementById('playBtn').addEventListener('click', function() {
+                    // 1. Get user input
+                    let userGuess = parseInt(document.getElementById('userGuess').value);
+                    let displayResult = document.getElementById('displayResult');
+                    let displayUser = document.getElementById('displayUser');
+                    let displayRandom = document.getElementById('displayRandom');
 
+                    // 2. Validate input
+                    if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
+                        displayResult.innerHTML = "Please enter a number between 1 and 10.";
+                        displayResult.style.color = "white";
+                        return;
+                    }
+
+                    // 3. Generate random number 1-10
+                    let randomNum = Math.floor(Math.random() * 10) + 1;
+
+                    // 4. Display numbers
+                    displayUser.innerHTML = userGuess;
+                    displayRandom.innerHTML = randomNum;
+
+                    // 5. Compare and provide feedback
+                    if (userGuess === randomNum) {
+                        displayResult.innerHTML = "You win!";
+                        displayResult.style.color = "white";
+                    } else {
+                        displayResult.innerHTML = "You did not win. Try again!";
+                        displayResult.style.color = "black";
+                    }
+                });
+            </script>
         </main>
         
         <footer>
@@ -96,38 +128,6 @@
                 <a href="#">Help</a>
             </section>
         </footer>
-        
-        <script>
-            document.getElementById('playBtn').addEventListener('click', function() {
-                // 1. Get user input
-                let userGuess = parseInt(document.getElementById('userGuess').value);
-                let displayResult = document.getElementById('displayResult');
-                let displayUser = document.getElementById('displayUser');
-                let displayRandom = document.getElementById('displayRandom');
 
-                // 2. Validate input
-                if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
-                    displayResult.innerHTML = "Please enter a number between 1 and 10.";
-                    displayResult.style.color = "white";
-                    return;
-                }
-
-                // 3. Generate random number 1-10
-                let randomNum = Math.floor(Math.random() * 10) + 1;
-
-                // 4. Display numbers
-                displayUser.innerHTML = userGuess;
-                displayRandom.innerHTML = randomNum;
-
-                // 5. Compare and provide feedback
-                if (userGuess === randomNum) {
-                    displayResult.innerHTML = "You win!";
-                    displayResult.style.color = "white";
-                } else {
-                    displayResult.innerHTML = "You did not win. Try again!";
-                    displayResult.style.color = "black";
-                }
-            });
-        </script>
     </body>
 </html>
