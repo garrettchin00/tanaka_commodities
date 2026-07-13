@@ -1,8 +1,6 @@
-(function(){
-	let now = new Date();
-	let span = document.querySelector("footer span");
-	span.innerHTML = now.getFullYear();
-})();
+let now = new Date();
+let span = document.querySelector("footer span");
+span.innerHTML = now.getFullYear();
 
 let messages = {
   success: "The form was submitted successfully",
@@ -292,11 +290,12 @@ function mapMessages(){
 }
 
 // event listeners
-document.getElementById("newAcct").addEventListener("submit", validateForm);
+document.getElementById("newAcct")?.addEventListener("submit", validateForm);
 // call our map function
 mapMessages();
-
-document.getElementById('playBtn').addEventListener('click', function() {
+let playButton = document.getElementById('playBtn');
+if(playButton) {
+  document.getElementById('playBtn').addEventListener('click', function() {
     // 1. Get user input
     let userGuess = parseInt(document.getElementById('userGuess').value);
     let displayResult = document.getElementById('displayResult');
@@ -326,3 +325,6 @@ document.getElementById('playBtn').addEventListener('click', function() {
         displayResult.style.color = "black";
     }
 });
+}else{
+  console.log("play button not found");
+}

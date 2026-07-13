@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Welcome to Tanaka's Amazing Commodities!">
         <title>Tanaka's Amazing Commodities</title>
         <meta name="author" content="Garrett Chin">
@@ -11,7 +11,6 @@
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <!-- GOOGLE FONTS LINKS -->
         <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        <script src="scripts.js" defer></script>
     </head>
     
     <body>
@@ -85,39 +84,6 @@
                     <p>Results: <span id="displayResult">?</span></p>
                 </div>
             </div>
-            
-            <script>
-                document.getElementById('playBtn').addEventListener('click', function() {
-                    // 1. Get user input
-                    let userGuess = parseInt(document.getElementById('userGuess').value);
-                    let displayResult = document.getElementById('displayResult');
-                    let displayUser = document.getElementById('displayUser');
-                    let displayRandom = document.getElementById('displayRandom');
-
-                    // 2. Validate input
-                    if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
-                        displayResult.innerHTML = "Please enter a number between 1 and 10.";
-                        displayResult.style.color = "white";
-                        return;
-                    }
-
-                    // 3. Generate random number 1-10
-                    let randomNum = Math.floor(Math.random() * 10) + 1;
-
-                    // 4. Display numbers
-                    displayUser.innerHTML = userGuess;
-                    displayRandom.innerHTML = randomNum;
-
-                    // 5. Compare and provide feedback
-                    if (userGuess === randomNum) {
-                        displayResult.innerHTML = "You win!";
-                        displayResult.style.color = "white";
-                    } else {
-                        displayResult.innerHTML = "You did not win. Try again!";
-                        displayResult.style.color = "black";
-                    }
-                });
-            </script>
         </main>
         
         <footer>
@@ -127,7 +93,8 @@
                 <a href="#">Cookies</a>
                 <a href="#">Help</a>
             </section>
+            <div>&copy; <span id="year"></span> Tanaka's Amazing Commodities. All rights reserved.</div>
         </footer>
-
     </body>
+    <script src="scripts.js" defer></script>
 </html>
